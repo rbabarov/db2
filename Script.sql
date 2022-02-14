@@ -17,33 +17,33 @@ create table if not exists artist (
 
 create table if not exists artist_genre (
 	id_artist integer references artist (id),
-	id_genre integer references genre (id),
+	id_genre integer references genre (id)
 );
 
 create table if not exists albums (
 	id serial primary key,
 	description text,
-	years integer check (year > 0)
+	years integer check (years > 0)
 );
 
 create table if not exists artist_albums (
 	id serial primary key,
 	artist_id integer references artist(id),
-	albums_id integer references abums(id)
+	albums_id integer references albums(id)
 );
+
 
 create table if not exists track (
 	id serial primary key,
 	names text not null, 	
 	duration numeric,
-	product_id integer references albums(id),
-	collection_id integer references track_collections(id)
+	product_id integer references albums(id)	
 );
 
 create table if not exists track_collections (
 	id serial primary key,	
 	track_id integer references track(id),
-	collection_id integer references collections(id)
-	
+	collection_id integer references collections(id)	
 );
+
 
