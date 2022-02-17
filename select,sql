@@ -1,0 +1,12 @@
+SELECT description,years  FROM albums    WHERE years = 2018;
+
+SELECT names,duration FROM track ORDER BY duration DESC  LIMIT 1;
+
+SELECT names,duration FROM track where duration > 3.5;
+
+SELECT names FROM collections where years BETWEEN  2018 and 2020;
+
+SELECT names, surname  FROM artist  where names  like '%';
+
+SELECT names  FROM track  where names  like '%my%';
+
