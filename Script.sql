@@ -16,6 +16,7 @@ create table if not exists artist (
 );
 
 create table if not exists artist_genre (
+	id serial primary key,
 	id_artist integer references artist (id),
 	id_genre integer references genre (id)
 );
